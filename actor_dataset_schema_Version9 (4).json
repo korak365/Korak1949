@@ -1,0 +1,29 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": ["postId", "username", "caption", "postUrl"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "username": {
+                        "label": "Username",
+                        "format": "text"
+                    },
+                    "postUrl": {
+                        "label": "Post URL",
+                        "format": "link"
+                    },
+                    "caption": {
+                        "label": "Caption",
+                        "format": "text"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "actorSpecification": 1,
+    "name": "bereal-public-discovery-scraper",
+    "title": "BeReal Public Discovery Scraper",
+    "description": "Scrapes public BeReal discovery posts for youth culture market research (captures username, caption, images, timestamp).",
+    "version": "0.0",
+    "meta": {
+        "templateId": "ai-generated-actor",
+        "generatedBy": "gpt-4o"
+    },
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "dockerfile": "../Dockerfile"
+}

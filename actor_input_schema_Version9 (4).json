@@ -1,0 +1,56 @@
+{
+    "title": "Input schema of the BeReal Public Discovery Scraper",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "startUrls": {
+            "title": "Start URLs",
+            "type": "array",
+            "description": "Discovery feed or explore pages to start scraping (public pages only).",
+            "editor": "requestListSources",
+            "prefill": [
+                {
+                    "url": "https://bereal.com/discovery"
+                }
+            ]
+        },
+        "maxRequestsPerCrawl": {
+            "title": "Max Requests per Crawl",
+            "type": "integer",
+            "description": "Maximum number of pages the crawler will open per run.",
+            "default": 200
+        },
+        "scrollIterations": {
+            "title": "Scroll iterations",
+            "type": "integer",
+            "description": "How many times to scroll the feed to load additional posts.",
+            "default": 8
+        },
+        "authMethod": {
+            "title": "Authentication method",
+            "type": "string",
+            "description": "Set to 'cookie' to provide a session cookie, 'credentials' for login placeholders, or 'none' for unauthenticated scraping (may be limited).",
+            "default": "none",
+            "enum": ["none", "cookie", "credentials"]
+        },
+        "cookieString": {
+            "title": "Cookie string",
+            "type": "string",
+            "description": "If authMethod is 'cookie', paste your session cookie here (store secrets in env vars on Cloud).",
+            "default": ""
+        },
+        "downloadImages": {
+            "title": "Download images",
+            "type": "boolean",
+            "description": "When true, the Actor downloads images to the Key-Value store under images/<postId>.*",
+            "default": true
+        },
+        "dedupe": {
+            "title": "Deduplicate posts",
+            "type": "boolean",
+            "description": "If true, seen post IDs are stored in Key-Value store and only new posts are output.",
+            "default": true
+        }
+    },
+    "required": []
+}
